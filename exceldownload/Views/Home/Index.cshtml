@@ -1,0 +1,27 @@
+﻿@model IEnumerable<exceldownload.ViewModels.UserViewModel>
+
+<div class="container">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>LastName</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                        <tr style="background-color:pink">
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Lastname</td>
+                        </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <a href="@Url.Action("ExportToExcel","Home")">Export Excel</a>
+</div>
